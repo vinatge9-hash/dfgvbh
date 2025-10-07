@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Café - Menu</title>
+  <meta name="description" content="Explore Aurora Café's menu: drinks, pastries, and prices. Filter by category and modern CMS-driven editing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --primary: #8B5E3C; }
+    .glass { background: rgba(255,255,255,0.72); backdrop-filter: saturate(180%) blur(8px); }
+    .hidden-scroll { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  </style>
+</head>
+<body class="bg-[#F7F5F0] text-[#1F2A37] font-sans">
+  <!-- Header (sticky glass) -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 glass shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-heading font-semibold" aria-label="Aurora Café Home">
+        <span>Aurora Café</span>
+      </a>
+      <ul class="flex items-center space-x-3 text-sm">
+        <li><a href="index.html" class="px-3 py-2 rounded hover:bg-gray-100 transition-all duration-300">Home</a></li>
+        <li><a href="menu.html" class="px-3 py-2 rounded bg-[#8B5E3C] text-white">Menu</a></li>
+        <li><a href="locations.html" class="px-3 py-2 rounded hover:bg-gray-100 transition-all duration-300">Locations</a></li>
+        <li><a href="contact.html" class="px-3 py-2 rounded hover:bg-gray-100 transition-all duration-300">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="pt-16 pb-6 max-w-6xl mx-auto px-4">
+      <div class="bg-white/60 border border-gray-200 rounded-lg p-6 shadow-card glass">
+        <div class="flex items-center justify-between mb-3">
+          <h1 class="text-3xl font-heading font-bold" style="font-family: 'Poppins', Inter, sans-serif;">Menu</h1>
+          <span class="text-sm text-gray-600">CMS-driven: edit items in the CMS panel</span>
+        </div>
+        <div id="cms-panel" class="hidden border rounded p-4 mb-4 bg-white">
+          <div class="flex items-center justify-between mb-2"><strong>Menu CMS Editor</strong>
+            <button id="toggle-cms" class="px-3 py-2 bg-[#8B5E3C] text-white rounded">Close</button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="border rounded p-3">
+              <div class="flex items-center justify-between mb-2"><span class="font-semibold">Items</span><span id="item-count" class="text-xs text-gray-500"></span></div>
+              <table class="w-full text-sm"><thead class="text-left"><tr><th>Name</th><th>Category</th><th>Price</th><th>Action</th></tr></thead><tbody id="menu-table-body"></tbody></table>
+              <button id="add-item" class="mt-2 px-3 py-2 bg-[#8B5E3C] text-white rounded">Add Item</button>
+            </div>
+            <div class="border rounded p-3">
+              <div class="flex items-center justify-between mb-2"><span class="font-semibold">New Item (quick)</span></div>
+              <div class="flex flex-col gap-2">
+                <input id="new-name" placeholder="Name" class="border rounded px-2 py-1" />
+                <input id="new-category" placeholder="Category" class="border rounded px-2 py-1" />
+                <input id="new-price" placeholder="Price" class="border rounded px-2 py-1" />
+              </div>
+              <button id="save-defaults" class="mt-3 w-full px-3 py-2 bg-[#8B5E3C] text-white rounded">Save Defaults</button>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <button id="open-cms" class="px-3 py-2 bg-[#8B5E3C] text-white rounded">Open Menu CMS</button>
+            <span class="text-xs text-gray-600">Tip: data persists to localStorage</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-600">Filter:</span>
+            <button class="px-2 py-1 border rounded" data-filter="All">All</button>
+            <button class="px-2 py-1 border rounded" data-filter="Drinks">Drinks</button>
+            <button class="px-2 py-1 border rounded" data-filter="Pastries">Pastries</button>
+          </div>
+        </div>
+        <div id="menu-grid" class="grid grid-cols-2 gap-4">
+          <!-- Menu items injected by JS (CMS) -->
+        </div>
+      </div>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white/70 border border-gray-200 rounded-lg p-4 shadow-card js-animate opacity-0 translate-y-6">
+          <div class="font-semibold mb-1">Espresso</div>
+          <div class="text-sm text-gray-600">Rich & bold</div>
+          <div class="mt-1 font-semibold">$2.50</div>
+        </div>
+        <div class="bg-white/70 border border-gray-200 rounded-lg p-4 shadow-card js-animate opacity-0 translate-y-6">
+          <div class="font-semibold mb-1">Croissant</div>
+          <div class="text-sm text-gray-600">Buttery & flaky</div>
+          <div class="mt-1 font-semibold">$3.25</div>
+        </div>
+        <div class="bg-white/70 border border-gray-200 rounded-lg p-4 shadow-card js-animate opacity-0 translate-y-6">
+          <div class="font-semibold mb-1">Blueberry Muffin</div>
+          <div class="text-sm text-gray-600">Sweet, plump blueberries</div>
+          <div class="mt-1 font-semibold">$3.75</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between items-center">
+      <span>&copy; 2025 Aurora Café</span>
+      <a href="contact.html" class="underline text-[#8B5E3C]">Contact</a>
+    </div>
+  </footer>
+  <script>const store = { key: 'aurora_menu', defaults: [
+    { name: 'Cappuccino', category: 'Drinks', price: '4.50' },
+    { name: 'Latte', category: 'Drinks', price: '4.75' },
+    { name: 'Croissant', category: 'Pastries', price: '3.25' }
+  ] };
+  function loadMenu(){ const saved = localStorage.getItem(store.key); return saved ? JSON.parse(saved) : store.defaults; }
+  function saveMenu(list){ localStorage.setItem(store.key, JSON.stringify(list)); }
+  function renderMenu(filter='All'){
+    const grid = document.getElementById('menu-grid'); grid.innerHTML = '';
+    const items = loadMenu();
+    const filtered = (filter==='All') ? items : items.filter(i => i.category===filter);
+    if(filtered.length===0){ grid.innerHTML = '<div class="col-span-2 text-sm text-gray-600">No items</div>'; return; }
+    filtered.forEach((it, idx) => {
+      const row = document.createElement('div'); row.className = 'bg-white/70 border border-gray-200 rounded p-3 shadow-card';
+      row.innerHTML = `<div class="flex items-center justify-between mb-1"><strong>${it.name}</strong><span class="text-sm text-gray-600">${it.category}</span></div><div class="flex items-center justify-between"><span class="text-sm">$${it.price}</span><button data-index="${idx}" class="px-2 py-1 text-white rounded bg-[#8B5E3C] hover:bg-[#70472F]">Edit</button></div>`;
+      grid.appendChild(row);
+    });
+  }
+  function ensureCMSStorage(){ if(!localStorage.getItem(store.key)){ saveMenu(store.defaults); } }
+  document.addEventListener('DOMContentLoaded', ()=>{
+    // CMS panel toggle
+    const openBtn = document.getElementById('open-cms');
+    const panel = document.getElementById('cms-panel');
+    const toggle = document.getElementById('toggle-cms');
+    const body = document.body;
+    openBtn && openBtn.addEventListener('click', ()=>{ panel.classList.toggle('hidden'); panel.scrollIntoView({behavior:'smooth'}); });
+    toggle && toggle.addEventListener('click', ()=>{ panel.classList.add('hidden'); });
+    // Build initial menu UI
+    ensureCMSStorage(); renderMenu('All'); // default
+    // Add item basics
+    document.getElementById('add-item')?.addEventListener('click', ()=>{
+      const name = document.getElementById('new-name')?.value || 'New Item';
+      const category = document.getElementById('new-category')?.value || 'Drinks';
+      const price = document.getElementById('new-price')?.value || '0.00';
+      const list = loadMenu(); list.push({ name, category, price }); saveMenu(list); renderMenu('All');
+    });
+    document.getElementById('save-defaults')?.addEventListener('click', ()=>{
+      saveMenu(store.defaults); renderMenu('All');
+    });
+    // Filter buttons
+    document.querySelectorAll('button[data-filter]').forEach(btn => btn.addEventListener('click', (e)=>{
+      renderMenu(e.target.getAttribute('data-filter'));
+    }));
+  });
+  // Lightbox (image previews) in case used elsewhere
+  document.addEventListener('click', (e)=>{
+    if(e.target && e.target.classList.contains('lightbox-trigger')){
+      const src = e.target.getAttribute('data-src');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.remove('hidden');
+    }
+  });
+  // Close lightbox
+  document.getElementById('lightbox-close')?.addEventListener('click', ()=>{ document.getElementById('lightbox').classList.add('hidden'); });
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
