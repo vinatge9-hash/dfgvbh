@@ -1,0 +1,10 @@
+# Mock CMS data for menu ( YAML )
+- name: Cappuccino
+  category: Drinks
+  price: 4.50
+- name: Latte
+  category: Drinks
+  price: 4.75
+- name: Croissant
+  category: Pastries
+  price: 3.25
