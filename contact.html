@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Café - Contact</title>
+  <meta name="description" content="Get in touch with Aurora Café. Send a message, subscribe to updates, and find hours." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#F7F5F0] text-[#1F2A37] font-sans">
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 glass shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-heading font-semibold" aria-label="Home">Aurora Café</a>
+      <ul class="flex items-center space-x-3 text-sm">
+        <li><a href="index.html" class="px-3 py-2 rounded hover:bg-gray-100">Home</a></li>
+        <li><a href="menu.html" class="px-3 py-2 rounded hover:bg-gray-100">Menu</a></li>
+        <li><a href="locations.html" class="px-3 py-2 rounded hover:bg-gray-100">Locations</a></li>
+        <li><a href="contact.html" class="px-3 py-2 rounded hover:bg-gray-100">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="pt-12 pb-6 max-w-6xl mx-auto px-4" aria-label="Contact">
+      <div class="bg-white/70 border border-gray-200 rounded-lg p-6 shadow-card glass">
+        <h1 class="text-3xl font-heading font-bold mb-2" style="font-family: 'Poppins', Inter, sans-serif;">Contact Us</h1>
+        <p class="text-sm text-gray-600 mb-4">Have a question or want to signup for the newsletter?</p>
+        <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-4" novalidate>
+          <input name="name" type="text" placeholder="Your Name" required class="border rounded px-3 py-2" />
+          <input name="email" type="email" placeholder="Email" required class="border rounded px-3 py-2" />
+          <textarea name="message" placeholder="Your Message" rows="5" class="col-span-2 border rounded px-3 py-2"></textarea>
+          <div class="col-span-2 flex items-center gap-2">
+            <button type="submit" class="px-4 py-2 bg-[#8B5E3C] text-white rounded">Send Message</button>
+            <span id="form-status" class="text-sm text-gray-600"></span>
+          </div>
+        </form>
+        <hr class="my-4" />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-3 border rounded bg-white">
+            <strong>Hours</strong>
+            <div class="text-sm text-gray-600">Mon–Fri: 7:00–19:00</div>
+            <div class="text-sm text-gray-600">Sat–Sun: 8:00–17:00</div>
+          </div>
+          <div class="p-3 border rounded bg-white">
+            <strong>Newsletter</strong>
+            <p class="text-sm text-gray-600">Stay updated with events and new items.</p>
+            <form id="newsletter-form" class="mt-2 flex gap-2" aria-label="Newsletter Signup">
+              <input type="email" placeholder="Email" class="border rounded px-3 py-2 w-full" required />
+              <button class="px-3 py-2 bg-[#8B5E3C] text-white rounded">Join</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between items-center">
+      <span>&copy; 2025 Aurora Café</span>
+      <a href="index.html" class="underline text-[#8B5E3C]">Home</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
