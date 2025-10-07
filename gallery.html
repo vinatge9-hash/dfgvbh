@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Café - Gallery</title>
+  <meta name="description" content="Gallery showcasing Aurora Café ambiance, drinks, and pastries." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style> .grid-gallery{ grid-template-columns: repeat(3, 1fr); } </style>
+</head>
+<body class="bg-[#F7F5F0] text-[#1F2A37] font-sans">
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 glass shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-heading font-semibold" aria-label="Home">Aurora Café</a>
+      <ul class="flex items-center space-x-3 text-sm">
+        <li><a href="index.html" class="px-3 py-2 rounded hover:bg-gray-100">Home</a></li>
+        <li><a href="menu.html" class="px-3 py-2 rounded hover:bg-gray-100">Menu</a></li>
+        <li><a href="locations.html" class="px-3 py-2 rounded hover:bg-gray-100">Locations</a></li>
+        <li><a href="contact.html" class="px-3 py-2 rounded hover:bg-gray-100">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="pt-12 pb-6 max-w-6xl mx-auto px-4" aria-label="Gallery">
+      <div class="bg-white/70 border border-gray-200 rounded-lg p-6 shadow-card glass">
+        <h1 class="text-3xl font-heading font-bold mb-2" style="font-family: 'Poppins', Inter, sans-serif;">Gallery</h1>
+        <p class="text-sm text-gray-600 mb-4">A glimpse of our space, drinks, and pastries.</p>
+        <div class="grid grid-cols-3 gap-4" id="gallery-grid">
+          <!-- placeholders -->
+          ${Array.from({length:9}).map((_,i)=>`<div class="bg-white rounded-lg overflow-hidden shadow-card cursor-pointer lightbox-trigger" data-src="data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='${['#e3d5c7','#d9d5d0','#e0e3d9'][i%3]}'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='${'#8B5E3C'}' font-family='Arial' font-size='28'>Photo ${i+1}</text></svg>`)}' height='180'>
+            <div class='flex items-center justify-center h-full'>Photo ${i+1}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-40">
+    <div class="bg-white rounded-lg p-2 shadow-lg max-w-3xl">
+      <img id="lightbox-img" src="" alt="Gallery" class="w-full max-h-[70vh] object-contain" />
+      <button id="lightbox-close" class="w-full py-2 mt-2 bg-gray-100 border-t">Close</button>
+    </div>
+  </div>
+  <footer class="bg-white border-t border-gray-200 mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between items-center">
+      <span>&copy; 2025 Aurora Café</span>
+      <a href="contact.html" class="underline text-[#8B5E3C]">Contact</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
