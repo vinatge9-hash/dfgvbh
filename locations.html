@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Café - Locations</title>
+  <meta name="description" content="Find Aurora Café locations, hours, and a map to visit us in person." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style> :root{ --primary:#8B5E3C; } .glass{ background: rgba(255,255,255,0.72); backdrop-filter: saturate(180%) blur(8px); } </style>
+</head>
+<body class="bg-[#F7F5F0] text-[#1F2A37] font-sans">
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 glass shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-heading font-semibold" aria-label="Home">Aurora Café</a>
+      <ul class="flex items-center space-x-3 text-sm">
+        <li><a href="index.html" class="px-3 py-2 rounded hover:bg-gray-100">Home</a></li>
+        <li><a href="menu.html" class="px-3 py-2 rounded hover:bg-gray-100">Menu</a></li>
+        <li><a href="locations.html" class="px-3 py-2 rounded bg-[#8B5E3C] text-white">Locations</a></li>
+        <li><a href="contact.html" class="px-3 py-2 rounded hover:bg-gray-100">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="pt-12 pb-6 max-w-6xl mx-auto px-4" aria-label="Locations">
+      <div class="bg-white/70 border border-gray-200 rounded-lg p-6 shadow-card glass">
+        <h1 class="text-3xl font-heading font-bold mb-2" style="font-family: 'Poppins', Inter, sans-serif;">Locations & Hours</h1>
+        <p class="text-sm text-gray-600 mb-4">Visit us in person. Each location features a warm vibe and reliable pastries daily.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white border rounded p-4 shadow-card">
+            <div class="flex items-center justify-between mb-2"><strong>Downtown</strong><span class="text-xs text-gray-500">Open 7:00–19:00</span></div>
+            <div class="text-sm text-gray-700 mb-2">123 Aurora Ave</div>
+            <iframe src="https://maps.google.com/maps?q=aurora%20cafe%20downtown&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="180" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="bg-white border rounded p-4 shadow-card">
+            <div class="flex items-center justify-between mb-2"><strong>Midtown</strong><span class="text-xs text-gray-500">Open 8:00–20:00</span></div>
+            <div class="text-sm text-gray-700 mb-2">45 Birch Street</div>
+            <iframe src="https://maps.google.com/maps?q=aurora%20cafe%20midtown&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="180" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between items-center">
+      <span>&copy; 2025 Aurora Café</span>
+      <a href="contact.html" class="underline text-[#8B5E3C]">Contact</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
