@@ -1,0 +1,14 @@
+/* Global styles (non-responsive baseline) for Aurora Café */
+:root {
+  --primary: #8B5E3C;
+  --secondary: #E8D5C4;
+  --bg: #F7F5F0;
+  --text: #1F2A37;
+}
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+/* Simple utility helpers for transitions */
+.transition-all { transition: all 0.3s ease; }
+
+/* Glassy sections for polish where Tailwind isn't loaded (backup) */
+.glass { background: rgba(255,255,255,0.72); backdrop-filter: saturate(180%) blur(8px); }
