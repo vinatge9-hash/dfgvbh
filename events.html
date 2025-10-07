@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Café - Events</title>
+  <meta name="description" content="Upcoming events, workshops, and promotions at Aurora Café." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style> .glass{ background: rgba(255,255,255,0.72); backdrop-filter: saturate(180%) blur(8px); } </style>
+</head>
+<body class="bg-[#F7F5F0] text-[#1F2A37] font-sans">
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 glass shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-heading font-semibold" aria-label="Home">Aurora Café</a>
+      <ul class="flex items-center space-x-3 text-sm">
+        <li><a href="index.html" class="px-3 py-2 rounded hover:bg-gray-100">Home</a></li>
+        <li><a href="menu.html" class="px-3 py-2 rounded hover:bg-gray-100">Menu</a></li>
+        <li><a href="locations.html" class="px-3 py-2 rounded hover:bg-gray-100">Locations</a></li>
+        <li><a href="contact.html" class="px-3 py-2 rounded hover:bg-gray-100">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="pt-12 pb-6 max-w-6xl mx-auto px-4" aria-label="Events">
+      <div class="bg-white/70 border border-gray-200 rounded-lg p-6 shadow-card glass">
+        <h1 class="text-3xl font-heading font-bold mb-2" style="font-family: 'Poppins', Inter, sans-serif;">Upcoming Events</h1>
+        <p class="text-sm text-gray-600 mb-4">Live music, latte art nights, workshops, and seasonal promos.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white border rounded p-4 shadow-card">
+            <div class="flex items-center justify-between mb-2"><strong>Latte Art Night</strong><span class="text-xs text-gray-500">Thu 7pm</span></div>
+            <p class="text-sm text-gray-700">Practice latte art basics with our baristas. Spaces limited.</p>
+            <button class="mt-2 px-3 py-2 bg-[#8B5E3C] text-white rounded">RSVP</button>
+          </div>
+          <div class="bg-white border rounded p-4 shadow-card">
+            <div class="flex items-center justify-between mb-2"><strong>Meet the Roaster</strong><span class="text-xs text-gray-500">Sat 2pm</span></div>
+            <p class="text-sm text-gray-700">A tasting session featuring our newest beans and roasting notes.</p>
+            <button class="mt-2 px-3 py-2 bg-[#8B5E3C] text-white rounded">Reserve Seat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between items-center">
+      <span>&copy; 2025 Aurora Café</span>
+      <a href="contact.html" class="underline text-[#8B5E3C]">Contact</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
